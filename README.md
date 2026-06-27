@@ -156,6 +156,6 @@ were designed with clear separation from normal ranges across all sensors.
 
 ## Badges
 
-![Python](https://img.shields.io/badge/python-3.x-blue)
+![Python](https://img.shields.io/badge/python-3.10.20-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
