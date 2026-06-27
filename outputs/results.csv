@@ -1,0 +1,4 @@
+model,accuracy,precision,recall,f1
+numpy_slp,1.0,1.0,1.0,1.0
+numpy_slp,1.0,1.0,1.0,1.0
+numpy_slp,1.0,1.0,1.0,1.0

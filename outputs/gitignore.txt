@@ -1,0 +1,24 @@
+# data
+data/synthetic/
+data/real/
+
+# outputs
+outputs/weights/
+outputs/plots/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+
+# jupyter
+.ipynb_checkpoints/
+
+# anaconda
+.conda/
+
+# mac
+.DS_Store
+
+# numpy weights
+*.npy
