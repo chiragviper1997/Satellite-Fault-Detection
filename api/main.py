@@ -7,12 +7,7 @@ app = FastAPI(title="Satellite Fault Detection API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "https://satellite-fault-detection-nu.vercel.app",
-        "*"
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
