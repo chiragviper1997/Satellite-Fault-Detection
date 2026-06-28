@@ -22,3 +22,9 @@ __pycache__/
 
 # numpy weights
 *.npy
+
+# api
+api/venv/
+
+# web
+web/node_modules/
