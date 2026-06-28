@@ -5,15 +5,18 @@ from model import predict
 
 app = FastAPI(title="Satellite Fault Detection API")
 
-# allow React frontend to call this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://satellite-fault-detection-nu.vercel.app",
+        "*"
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# input schema — 6 sensor values
 class SensorInput(BaseModel):
     battery_voltage    : float
     solar_current      : float
