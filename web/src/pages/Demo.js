@@ -35,7 +35,7 @@ function Demo() {
     setError(null);
     setResult(null);
     try {
-      const res = await fetch('http://127.0.0.1:8000/predict', {
+      const res = await fetch('https://satellite-fault-detection-api.onrender.com/predict', {
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' },
         body    : JSON.stringify(values)
@@ -43,7 +43,7 @@ function Demo() {
       const data = await res.json();
       setResult(data);
     } catch (e) {
-      setError('Cannot connect to API. Make sure the FastAPI server is running.');
+      setError('Cannot connect to API. The server may be waking up — please try again in 30 seconds.');
     } finally {
       setLoading(false);
     }
@@ -89,6 +89,10 @@ function Demo() {
           simultaneously. Changing a single sensor may not trigger a fault prediction.
           Use <strong style={{ color: '#f87171' }}>Load Fault Values</strong> to see a
           correlated fault event across all sensors.
+          <br /><br />
+          <strong style={{ color: '#fbbf24' }}>Note:</strong> The first prediction may
+          take up to 50 seconds if the server is waking up from inactivity. Subsequent
+          predictions will be instant.
         </p>
       </div>
 
@@ -127,7 +131,7 @@ function Demo() {
         disabled={loading}
         style={{ fontSize: '1rem', padding: '14px 40px', marginBottom: '32px', opacity: loading ? 0.7 : 1 }}
       >
-        {loading ? 'Analysing...' : 'Run Prediction'}
+        {loading ? 'Analysing... (may take up to 50s on first request)' : 'Run Prediction'}
       </button>
 
       {/* error */}
